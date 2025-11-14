@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[node name="ItemPickup" type="Area3D"]
+script = ExtResource("res://scripts/inventory/ItemPickup.gd")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SphereShape3D.new()
+shape.radius = 1.0
