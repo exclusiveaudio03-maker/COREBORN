@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="theme-color" content="#000000">
 
-    <title>COREBORN</title>
+	<title>COREBORN</title>
 
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.webmanifest">
+	<!-- Manifest -->
+	<link rel="manifest" href="/manifest.webmanifest">
 
-    <!-- iPhone/iOS PWA Support -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="COREBORN">
-    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+	<!-- iOS PWA Icons -->
+	<link rel="apple-touch-icon" href="/icons/icon-192.png">
 
-    <!-- General Icons -->
-    <link rel="icon" href="/icons/icon-192.png" />
-
-    <!-- Styles (optional) -->
-    <style>
-        body {
-            margin: 0;
-            background: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-    </style>
+	<!-- Engine JS -->
+	<script src="/coreborn.js"></script>
 </head>
-<body>
 
-    <!-- Your Game CANVAS / MAIN DIV -->
-    <div id="game-container"></div>
+<body style="margin:0; overflow:hidden; background:black;">
 
-    <!-- Your Game Script -->
-    <script src="/main.js"></script>
+<script>
+	// Godot Web Export Loader
+	const engine = new Engine({
+		canvas: (function() {
+			const c = document.createElement("canvas");
+			document.body.appendChild(c);
+			return c;
+		})(),
+		executable: "/coreborn",
+		entrypoint: "index",
+	});
 
-    <!-- Register Service Worker -->
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/sw.js")
-                    .then(() => console.log("Service Worker Registered"))
-                    .catch(err => console.error("SW registration failed:", err));
-            });
-        }
-    </script>
+	engine.start({ 
+		'onProgress': (p) => console.log("Loading:", p) 
+	});
+</script>
 
 </body>
 </html>
