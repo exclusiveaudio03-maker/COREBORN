@@ -1,0 +1,6 @@
+[gd_scene load_steps=3 format=3]
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("res://scripts/npc/NPC_Brain.gd")
+
+[node name="Mesh" type="MeshInstance3D" parent="NPC"]
+mesh = CapsuleMesh.new()
