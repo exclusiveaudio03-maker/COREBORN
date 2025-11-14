@@ -1,0 +1,31 @@
+# Godot-specific ignores
+.import/
+export_presets.cfg
+
+# Ignore Godot cache
+.cache/
+mono_temp/
+data_*/
+
+# Ignore exported builds (HTML, Android, Windows, etc.)
+*.html
+*.js
+*.wasm
+*.pck
+*.zip
+
+# Ignore editor metadata
+.project_metadata/*
+*.translation
+*.pot
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*.tmp
