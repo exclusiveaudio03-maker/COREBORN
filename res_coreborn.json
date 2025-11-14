@@ -1,0 +1,214 @@
+{
+  "project_id": "coreborn_rpg_project",
+  "version": "1.0",
+  "checksum": "TO_BE_GENERATED",
+  "story": {
+    "chapters": [
+      {
+        "id": "CH1",
+        "title": "THE FIRST BREACH",
+        "missions": [
+          {
+            "id": "M1",
+            "title": "Collapse at Hollowlight Station",
+            "type": "tutorial",
+            "objectives": [
+              "Learn movement",
+              "Defeat Framewild Larva",
+              "Escape collapsing station"
+            ],
+            "enemy_types": ["Framewild Larva"],
+            "boss": null
+          },
+          {
+            "id": "M2",
+            "title": "Contact with Dr. Verin Hale",
+            "objectives": [
+              "Find comms unit",
+              "Learn about Coreborn Frame",
+              "Defeat Mawstriker miniboss"
+            ],
+            "boss": "Mawstriker"
+          },
+          {
+            "id": "M3",
+            "title": "Escape Through the Market Ruins",
+            "objectives": [
+              "Use wall-runs",
+              "Evade Nullspace flicker",
+              "Meet Kyra Solis"
+            ],
+            "boss": null
+          }
+        ]
+      },
+
+      {
+        "id": "CH2",
+        "title": "THE COREBORN PROTOCOL",
+        "missions": [
+          {
+            "id": "M4",
+            "title": "Arrival at Neon Delta Safehub",
+            "objectives": [
+              "Meet Kyra, Lleya, Jax",
+              "Choose evolution path"
+            ],
+            "choices": [
+              "Brutal Form",
+              "Phase Form",
+              "Swarm Form"
+            ]
+          },
+          {
+            "id": "M5",
+            "title": "Titan Residue Sweep",
+            "type": "open_world",
+            "objectives": [
+              "Fight residue creatures",
+              "Collect stabilizer materials",
+              "Learn crafting"
+            ]
+          },
+          {
+            "id": "M6",
+            "title": "The Skyrail Sabotage",
+            "objectives": [
+              "Stop hijacked skyrail",
+              "Prevent district collision"
+            ],
+            "boss": "AEL-NET Drone Captain"
+          }
+        ]
+      },
+
+      {
+        "id": "CH3",
+        "title": "BREACHPOINT RISING",
+        "missions": [
+          {
+            "id": "M7",
+            "title": "Framewild Nest Sweep",
+            "objectives": [
+              "Clear Exclusion Zone",
+              "Use combo system"
+            ],
+            "boss": "Root-Tyrant"
+          },
+          {
+            "id": "M8",
+            "title": "The Unauthorized Redline Test",
+            "objectives": [
+              "Stop Overclock experiment",
+              "Rescue civilians"
+            ],
+            "boss": null,
+            "antagonist_appearance": "Astra Vex"
+          },
+          {
+            "id": "M9",
+            "title": "Titan Roar — Event Horizon",
+            "objectives": [
+              "Experience first TitanNull awakening",
+              "Escape collapsing terrain"
+            ],
+            "boss": "TitanNull Vortex-Omega (tease)"
+          }
+        ]
+      },
+
+      {
+        "id": "CH4",
+        "title": "THE NULLSPACE DIVE",
+        "missions": [
+          {
+            "id": "M10",
+            "title": "Stabilize the Looping Alley",
+            "mechanics": ["looping", "phase puzzles"],
+            "objectives": ["Endless alley escape"],
+            "boss": null
+          },
+          {
+            "id": "M11",
+            "title": "Memory Prison Break",
+            "objectives": ["Free trapped digital minds"],
+            "boss": "Sentinel RAM-Beast",
+            "reward": "Nullstep Dash"
+          },
+          {
+            "id": "M12",
+            "title": "Fracture of Reality",
+            "objectives": ["Escape collapsing Nullspace zone"],
+            "boss": null
+          }
+        ]
+      },
+
+      {
+        "id": "CH5",
+        "title": "THE TITAN’S SHADOW",
+        "missions": [
+          {
+            "id": "M13",
+            "title": "The Spine Fields Investigation",
+            "objectives": [
+              "Explore Titan bone wasteland",
+              "Survive environmental hazards"
+            ]
+          },
+          {
+            "id": "M14",
+            "title": "TitanNull Encounter — VORTEX-OMEGA",
+            "objectives": [
+              "Scripted confrontation",
+              "Escape massive Titan attack"
+            ],
+            "boss": "Vortex-Omega"
+          },
+          {
+            "id": "M15",
+            "title": "Aftermath in Neon Delta",
+            "objectives": [
+              "Debrief with team",
+              "Choose core sync philosophy"
+            ],
+            "choices": [
+              "Preserve Humanity",
+              "Accept Power",
+              "Use Power Strategically"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "CH6",
+        "title": "THE OVERCLOCK SIEGE",
+        "missions": [
+          {
+            "id": "M16",
+            "title": "Assault on the Safehub",
+            "objectives": [
+              "Defend civilians",
+              "Repel Synapse Edge troops"
+            ]
+          },
+          {
+            "id": "M17",
+            "title": "Duel with Commander Rhus Varrek",
+            "boss": "Rhus Varrek",
+            "objectives": ["Fight experimental armor boss"]
+          },
+          {
+            "id": "M18",
+            "title": "Capture Attempt / Split Route",
+            "routes": {
+              "A": "Escape with Kyra (Heroic)",
+              "B": "Fight alone (Mutation rises)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
