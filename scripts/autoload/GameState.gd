@@ -1,41 +1,45 @@
 extends Node
-@export var version: String = "0.1.0"
-var save_file_path := "user://save_game.json"
 
-var save_data := {
-	"chapter": "CH1",
-	"completed_missions": [],
+@export var version: String = "0.1"
+var save_file := "user://save_game.json"
+
+var state := {
+	"player_id": "player_001",
+	"position": Vector3.ZERO,
+	"rotation": Vector3.ZERO,
+	"inventory": {},
 	"choices": {},
-	"reputation": {"government":0,"corebreakers":0,"scientists":0,"military":0},
-	"resources": {"titan_oil":0, "nanite_scrap":0}
+	"reputation": {"gov":0,"core":0,"sci":0}
 }
 
 signal saved()
+signal loaded()
 
 func _ready():
-	# auto-load saved state if present
+	# attempt to load
 	load()
-
+	
 func save() -> void:
-	var f = FileAccess.open(save_file_path, FileAccess.ModeFlags.WRITE)
+	var f = FileAccess.open(save_file, FileAccess.ModeFlags.WRITE)
 	if f:
-		f.store_string(JSON.print(save_data))
+		f.store_string(JSON.print(state))
 		f.close()
 		emit_signal("saved")
 
 func load() -> bool:
-	if not FileAccess.file_exists(save_file_path):
+	if not FileAccess.file_exists(save_file):
 		return false
-	var f = FileAccess.open(save_file_path, FileAccess.ModeFlags.READ)
+	var f = FileAccess.open(save_file, FileAccess.ModeFlags.READ)
 	if not f:
 		return false
 	var res = JSON.parse_string(f.get_as_text())
 	f.close()
 	if res.error != OK:
 		return false
-	save_data = res.result
+	state = res.result
+	emit_signal("loaded")
 	return true
 
-func set_choice(id:String, value) -> void:
-	save_data["choices"][id] = value
+func set_choice(key:String, value) -> void:
+	state["choices"][key] = value
 	save()
