@@ -1,0 +1,7 @@
+; Godot 4.2.2 minimal project file
+config_version=4
+
+[application]
+config/name="Coreborn Engine"
+config/description="Coreborn mobile-first engine skeleton"
+run/main_scene="res://scenes/main.tscn"
